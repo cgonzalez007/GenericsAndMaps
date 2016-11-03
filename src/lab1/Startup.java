@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 /**
  *
@@ -27,7 +28,7 @@ public class Startup {
         favMovies.put("Raiders1", movie3);
         favMovies.put("Raiders2", movie4);
         
-        System.out.println("Retrieve Movie object from key 'Jaws1'\n");
+        System.out.println("Retrieve Movie object from HashMap using key 'Jaws1'\n");
         System.out.println(favMovies.get("Jaws1"));
         
         System.out.println("\n\n");
@@ -65,7 +66,7 @@ public class Startup {
         class for collections that has a sort() method that can sort Collection
         objects according to natural order*/
         Collection <Movie> values2 = sortedByKeys.values();
-        ArrayList<Movie> moviesToSort = new ArrayList(values2); 
+        List<Movie> moviesToSort = new ArrayList(values2); 
         Collections.sort(moviesToSort);
         for(Movie m : moviesToSort){
             System.out.println(m);
@@ -81,6 +82,14 @@ public class Startup {
         
         System.out.println("\n\n");
         
+        System.out.println("Movie objects now stored in a TreeSet. Duplicates "
+                + "are removed, and sorting works. (Back to default): \n");
+        
+        Set<Movie> moviesInTreeSet = new TreeSet<>(moviesToSort);
+        
+        for(Movie m : moviesInTreeSet){
+            System.out.println(m);
+        }
         
         
     }
